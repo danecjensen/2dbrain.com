@@ -1,0 +1,67 @@
+Here are written instructions on how a post should be structured
+I've inspected the structure of the reference post. The main components seem to include:
+
+1. Front matter (defined between --- lines) indicating the layout.
+2. Image(s) using the <img> tag.
+3. Date and content enclosed within <p> tags.
+
+Here is an example post 
+---
+layout: default
+---
+
+<br>
+<img src="/img/chrome-ext-first.png"/ width="600px">
+<br>
+<h2>Chrome Extension First Development</h2>
+<p></p>
+<p><b>June 2023</b></p>
+<p>
+For startups: speed, simplicity, and focused value creation are core to success. 
+  The constraint of Chrome extension focuses a startup and the development is super simple and distribution is wide and fast so starting with a Chrome extension as your MVP makes perfect sense for lots of startups and especially AI startups. 
+  Here are the benefits on this strategic choice:
+</p>
+
+<p><b>1. Rapid Development and Launch</b></p>
+
+<p>
+  Chrome extensions thrive in their simplicity, utilizing common web technologies like HTML, CSS, and JavaScript, thus allowing for faster development compared to traditional software. 
+  The reduced complexity bypasses the need for an extensive infrastructure, which in turn accelerates the overall development timeline.
+</p>
+<p>
+Coupled with a swift development process, the Chrome environment also enables a rapid product launch. As soon as your extension is ready, you can upload it to the Chrome Web Store, making it immediately accessible to millions of users worldwide.
+</p>
+
+<p><b>2. Swift Iteration and Refinement</b></p>
+
+<p>
+  Developing your MVP as a Chrome extension doesn’t just speed up the initial development and launch process, but it also allows for rapid iteration and refinement. 
+  Chrome extensions operate in a sandboxed environment, ensuring that any changes or updates are contained within the extension and do not impact the broader browser functionalities. 
+  This simplifies the process of testing and implementing changes, allowing for continuous and quick product enhancements based on user feedback.
+</p>
+
+<p><b>3. Broad Distribution</b></p>
+
+<p>
+  Leveraging Chrome for your MVP means tapping into a vast user base right from the get-go. As the most widely-used web browser, Chrome offers a distribution channel that few other platforms can match. 
+  With just a few clicks, users can discover and install your extension from the Chrome Web Store. 
+  This streamlined user experience significantly lowers barriers to user acquisition, amplifying the reach of your MVP.
+</p>
+
+<p><b>4. Intense Focus on Core Value Proposition</b></p>
+
+<p>
+  Possibly the most significant benefit of creating a Chrome extension is the opportunity to distill your startup's value proposition. 
+  The limited scope of a browser extension forces you to concentrate on the core functionality that offers the most value to your users, removing unnecessary frills and distractions.
+</p>
+<p>
+The simplicity that comes with developing a Chrome extension encourages a laser focus on the essential feature(s) your product provides. 
+This simplification is a powerful exercise in product clarity and can help ensure that your MVP offers a strong, clear value proposition that meets a genuine user need.
+</p>
+<p>
+In summary, choosing to develop your startup's MVP as a Chrome extension facilitates rapid development and launch, swift iteration cycles, broad distribution, and, importantly, encourages a profound focus on your core value proposition. By embracing simplicity and speed, startups can efficiently validate their product idea, making a swift and impactful entry into the market.
+</p>
+
+
+
+

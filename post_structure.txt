@@ -1,0 +1,5 @@
+I've inspected the structure of the reference post. The main components seem to include:
+
+1. Front matter (defined between --- lines) indicating the layout.
+2. Image(s) using the <img> tag.
+3. Date and content enclosed within <p> tags.
