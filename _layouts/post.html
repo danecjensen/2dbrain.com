@@ -1,0 +1,172 @@
+---
+layout: default
+---
+
+<article class="post">
+  <header class="post-header">
+    <br>
+    {% if page.image %}
+    <img src="{{ page.image }}" alt="{{ page.title }}" style="max-width: 600px; width: 100%;">
+    <br>
+    {% endif %}
+    <h2>{{ page.title }}</h2>
+    <p><b>{{ page.date | date: "%B %Y" }}</b></p>
+
+    {% if page.tags %}
+    <p class="post-tags">
+      {% for tag in page.tags %}
+        <span class="tag-badge">{{ tag }}</span>
+      {% endfor %}
+    </p>
+    {% endif %}
+  </header>
+
+  <div class="post-content">
+    {{ content }}
+  </div>
+
+  {% if page.references %}
+  <div class="post-references">
+    <h3>References</h3>
+    <ol>
+      {% for ref in page.references %}
+      <li id="ref-{{ forloop.index }}">
+        <a href="{{ ref.url }}" target="_blank" rel="noopener noreferrer">{{ ref.title }}</a>
+        {% if ref.note %}
+        <br><span class="ref-note">{{ ref.note }}</span>
+        {% endif %}
+      </li>
+      {% endfor %}
+    </ol>
+  </div>
+  {% endif %}
+
+  <div class="post-meta">
+    <p><small>Published on {{ page.date | date: "%B %d, %Y" }}</small></p>
+  </div>
+</article>
+
+<style>
+  .post-header {
+    margin-bottom: 2em;
+  }
+
+  .post-tags {
+    margin: 1em 0;
+  }
+
+  .tag-badge {
+    display: inline-block;
+    background-color: #e0e0e0;
+    color: #333;
+    padding: 3px 10px;
+    margin: 2px 4px 2px 0;
+    border-radius: 3px;
+    font-size: 0.85em;
+  }
+
+  .post-content {
+    line-height: 1.6;
+    margin-bottom: 2em;
+  }
+
+  .post-content img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1em 0;
+  }
+
+  .post-content pre {
+    background-color: #f5f5f5;
+    padding: 1em;
+    border-radius: 4px;
+    overflow-x: auto;
+    border-left: 3px solid #ccc;
+  }
+
+  .post-content code {
+    background-color: #f5f5f5;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.9em;
+  }
+
+  .post-content pre code {
+    background-color: transparent;
+    padding: 0;
+  }
+
+  .post-references {
+    margin-top: 3em;
+    padding-top: 2em;
+    border-top: 1px solid #e0e0e0;
+  }
+
+  .post-references h3 {
+    font-size: 1.2em;
+    margin-bottom: 1em;
+  }
+
+  .post-references ol {
+    padding-left: 1.5em;
+  }
+
+  .post-references li {
+    margin-bottom: 0.75em;
+  }
+
+  .post-references a {
+    color: #0066cc;
+    text-decoration: none;
+  }
+
+  .post-references a:hover {
+    text-decoration: underline;
+  }
+
+  .post-references a::after {
+    content: " ↗";
+    font-size: 0.8em;
+    color: #999;
+  }
+
+  .ref-note {
+    color: #666;
+    font-size: 0.9em;
+  }
+
+  .post-meta {
+    margin-top: 2em;
+    padding-top: 1em;
+    border-top: 1px solid #e0e0e0;
+    color: #666;
+    font-size: 0.9em;
+  }
+
+  /* Responsive YouTube embeds */
+  .youtube-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    margin: 1.5em 0;
+  }
+
+  .youtube-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .youtube-caption {
+    text-align: center;
+    font-style: italic;
+    color: #666;
+    margin-top: 0.5em;
+    font-size: 0.9em;
+  }
+</style>

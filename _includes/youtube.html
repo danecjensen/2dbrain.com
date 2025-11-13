@@ -1,0 +1,18 @@
+{% assign video_id = include.id %}
+{% assign start_time = include.start | default: "" %}
+{% assign end_time = include.end | default: "" %}
+{% assign caption = include.caption | default: "" %}
+
+{% capture youtube_url %}https://www.youtube.com/embed/{{ video_id }}{% if start_time != "" %}?start={{ start_time }}{% if end_time != "" %}&end={{ end_time }}{% endif %}{% elsif end_time != "" %}?end={{ end_time }}{% endif %}{% endcapture %}
+
+<div class="youtube-container">
+  <iframe
+    src="{{ youtube_url }}"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen>
+  </iframe>
+</div>
+{% if caption != "" %}
+<p class="youtube-caption">{{ caption }}</p>
+{% endif %}
