@@ -1,0 +1,90 @@
+---
+layout: default
+title: Browse by Tag
+---
+
+<h2>Browse by Tag</h2>
+<p>Explore posts organized by topic.</p>
+
+{% assign tags_list = site.posts | map: 'tags' | join: ',' | split: ',' | uniq | sort %}
+
+<div class="tags-grid">
+  {% for tag in tags_list %}
+    {% if tag != "" %}
+      {% assign tag_posts = site.posts | where_exp: "post", "post.tags contains tag" %}
+      <div class="tag-section" id="tag-{{ tag | slugify }}">
+        <h3>
+          <span class="tag-name">{{ tag }}</span>
+          <span class="tag-count">({{ tag_posts | size }})</span>
+        </h3>
+        <ul class="post-list">
+          {% for post in tag_posts %}
+            <li>
+              <a href="{{ post.url }}">{{ post.title }}</a>
+              <span class="post-date">{{ post.date | date: "%b %d, %Y" }}</span>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endif %}
+  {% endfor %}
+</div>
+
+<style>
+  .tags-grid {
+    margin-top: 2em;
+  }
+
+  .tag-section {
+    margin-bottom: 2.5em;
+    padding-bottom: 1.5em;
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  .tag-section:last-child {
+    border-bottom: none;
+  }
+
+  .tag-name {
+    font-size: 1.3em;
+    color: #333;
+    font-weight: bold;
+  }
+
+  .tag-count {
+    color: #999;
+    font-size: 0.9em;
+    font-weight: normal;
+  }
+
+  .post-list {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 1em;
+  }
+
+  .post-list li {
+    padding: 0.5em 0;
+    border-bottom: 1px dotted #ddd;
+  }
+
+  .post-list li:last-child {
+    border-bottom: none;
+  }
+
+  .post-list a {
+    color: #0066cc;
+    text-decoration: none;
+    font-size: 1.05em;
+  }
+
+  .post-list a:hover {
+    text-decoration: underline;
+  }
+
+  .post-date {
+    color: #666;
+    font-size: 0.85em;
+    margin-left: 1em;
+  }
+</style>

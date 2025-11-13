@@ -1,0 +1,92 @@
+# Site settings
+title: 2dbrain
+description: >-
+  Personal blog for quick insights, research notes, and learnings about AI,
+  productivity tools, and software development.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://2dbrain.com" # the base hostname & protocol for your site
+author: Dane Jensen
+email: your-email@example.com
+
+# Build settings
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: 'highlight'
+    default_lang: text
+    block:
+      line_numbers: true
+
+# Permalink structure
+permalink: /:year/:month/:day/:title/
+
+# Collections
+collections:
+  posts:
+    output: true
+    permalink: /:year/:month/:day/:title/
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - scripts/
+  - requirements.txt
+  - venv/
+  - .venv/
+  - "*.pyc"
+  - __pycache__/
+  - create_prompt.py
+  - prompt.tmpl
+  - post_structure.txt
+  - combined_prompt.txt
+  - README.md
+
+# Include files
+include:
+  - _pages
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Feed settings
+feed:
+  path: atom.xml
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      comments: false
+
+# Tag settings - flat taxonomy
+tag_page_layout: tag_page
+tag_page_dir: tag
+
+# Site navigation
+navigation:
+  - title: Home
+    url: /
+  - title: Tags
+    url: /tags.html
+  - title: Search
+    url: /search.html
+  - title: About
+    url: /bio.html
+
+# Custom settings
+show_excerpts: true
+paginate: 10
