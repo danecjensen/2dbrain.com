@@ -48,6 +48,7 @@ exclude:
   - post_structure.txt
   - combined_prompt.txt
   - README.md
+  - conversations/
 
 # Include files
 include:
