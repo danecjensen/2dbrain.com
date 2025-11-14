@@ -160,6 +160,50 @@ Visit `/tags.html` to see all tags and posts organized by topic.
 
 Visit `/search.html` for full-text search across all posts.
 
+## Conversations Directory
+
+The `conversations/` directory stores interesting AI conversations (ChatGPT, Claude, Grok) that serve as **reference material** for future blog posts.
+
+### Why Use This?
+
+Not every conversation needs to become an immediate post. Save conversations here when:
+- You want to preserve research for later
+- A topic needs more thought before publishing
+- You're gathering material for a comprehensive post
+- You want to reference the conversation in future posts
+
+### Saving Conversations
+
+```bash
+# Create a new conversation file with metadata
+vim conversations/grok-topic-name.md
+```
+
+Each file should include:
+- **Source**: ChatGPT/Claude/Grok
+- **Topic**: Brief description
+- **Date Saved**: YYYY-MM-DD
+- **Tags**: Relevant tags
+
+See `conversations/README.md` for detailed guidelines.
+
+### Converting to Posts
+
+When ready to publish, use the conversation as source material:
+
+```bash
+# Convert directly to a post
+python scripts/chat_to_post.py conversations/my-conversation.md
+
+# Extract URLs for references
+python scripts/extract_urls.py conversations/my-conversation.md
+
+# Search for topics
+grep -r "topic name" conversations/
+```
+
+The original conversation stays in `conversations/` (excluded from Jekyll build) while the post goes to `_posts/`.
+
 ## File Structure
 
 ```
@@ -172,6 +216,7 @@ Visit `/search.html` for full-text search across all posts.
 │   ├── youtube.html      # YouTube embed
 │   └── ref.html          # Reference citation
 ├── _posts/               # Blog posts (Markdown)
+├── conversations/        # Saved AI conversations (reference material)
 ├── scripts/              # Python automation tools
 │   ├── chat_to_post.py   # Convert LLM chats
 │   ├── new_post.py       # Create new post
